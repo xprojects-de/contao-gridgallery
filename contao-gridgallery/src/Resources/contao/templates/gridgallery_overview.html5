@@ -1,0 +1,36 @@
+<div class="xextendedgallery <?= $this->class; ?> block" id="xextendedgallery<?= $this->id; ?>" <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+  <?php $xextendedgalleryitemcontainer_opened = false; ?>
+  <?php foreach ($this->xdata as $item): ?>
+    <?php
+    if ($item['gridstart'] == true) {
+      $xextendedgalleryitemcontainer_opened = true;
+      echo('<div class="xextendedgalleryitemcontainer">');
+    }
+    ?>
+    <div class="xextendedgalleryitem xextendedgalleryitem<?= $item['grid'] ?>">
+      <div class="xextendedgalleryitem-image" style="background-image: url('<?= $item['thumburl'] ?>'); transform: translate(0px, 0px) rotate(0rad) skewX(0rad) scale(1, 1);"></div>
+      <?php if ($item['text'] != ''): ?>
+        <div class="xextendedgalleryitem-overlay">
+          <div><a <?= $item['lightbox'] ?> href="<?= $item['image'] ?>"><?= $item['text'] ?></a></div>
+        </div>
+      <?php else: ?>
+        <div class="xextendedgalleryitem-noneoverlay">
+          <div><a <?= $item['lightbox'] ?> href="<?= $item['image'] ?>">&nbsp;</a></div>
+        </div>
+      <?php endif; ?>
+    </div>
+    <?php
+    if ($item['gridstop'] == true) {
+      $xextendedgalleryitemcontainer_opened = false;
+      echo('</div>');
+    }
+    ?>
+  <?php endforeach; ?>
+  <?php
+  if ($xextendedgalleryitemcontainer_opened == true) {
+    echo('</div>');
+  }
+  ?>
+  <div class="xextendedgalleryclear"></div>
+</div>
+
