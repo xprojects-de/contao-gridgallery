@@ -3,12 +3,12 @@
   "description": "Gridgallery for Contao",
   "keywords": ["contao", "gridgallery"],
   "type": "contao-bundle",
-  "version": "0.3",
+  "version": "0.4",
   "license": "LGPL-3.0-or-later",
   "require": {
     "php": ">=7.0",
     "contao/core-bundle": "^4.8",
-    "heimrichhannot/contao-fieldpalette-bundle": "^0.4"
+    "heimrichhannot/contao-fieldpalette-bundle": "^0.5"
   },
   "authors": [
     {
